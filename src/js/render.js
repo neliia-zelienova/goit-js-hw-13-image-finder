@@ -1,6 +1,6 @@
 import rendrGallery from "../templates/gallery.hbs"
 
-const svgImage = '../images/sprite.svg#icon-heart';
+
 
 // const ForRender = {
 //     renderArray: [
@@ -136,6 +136,12 @@ const svgImage = '../images/sprite.svg#icon-heart';
 //const ForRender = new Object();
 //ForRender.renderArray = images;
 export const render = (data) => {
-    const containerRef = document.querySelector('.gallery-div');
+    const containerRef = document.querySelector('.gallery-list');
     containerRef.insertAdjacentHTML('beforeend', rendrGallery({data}));
 };
+
+
+export const clearImageList = () => {
+    const containerRef = document.querySelector('.gallery-list');
+    if (containerRef) containerRef.innerHTML = "";
+}

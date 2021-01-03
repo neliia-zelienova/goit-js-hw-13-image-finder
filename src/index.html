@@ -4,18 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homework 13</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- <link rel="stylesheet" href="./normalize.css"> -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="wrapper">
+    <div class="container">
   <form class="search-form" id="search-form">
     <input class="input" type="text" name="query" autocomplete="off" placeholder="Search images..." />
   </form>
-  <div class="gallery-div"></div>
   </div>
+  <div class="gallery-div container">
+    <ul class="gallery-list"></ul>
+  </div>
+
+    <div class="load-more container">
+      <button type="button" class="button">Load more</button>
+    </div>
+  </div>
+
+
 
 
 <div class="lightbox js-lightbox">

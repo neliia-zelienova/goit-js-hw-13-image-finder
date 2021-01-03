@@ -1,31 +1,29 @@
-<ul class="gallery">
-    {{#each data}}
-    <li class="gallery-card">
-        <a href="" class="gallery-link">
+{{#each data}}
+<li class="gallery-card">
+    <a href="" class="gallery-link">
 
-            <div class="photo-card">
-                <img class="gallery-img" src="{{this.previewURL}}" alt="" />
+        <div class="photo-card">
+            <img class="gallery-img" src="{{this.webformatURL}}" alt="{{largeImageURL}}" />
 
-                <div class="stats">
-                    <p class="stats-item likes">
-                        {{!-- <i class="material-icons">thumb_up</i> --}}
-                        {{this.likes}}
-                    </p>
-                    <p class="stats-item viwes">
-                        {{!-- <i class="material-icons">views</i> --}}
-                        {{this.views}}
-                    </p>
-                    <p class="stats-item comments">
-                        {{!-- <i class="material-icons">comment</i> --}}
-                        {{this.comments}}
-                    </p>
-                    <p class="stats-item downloads">
-                        {{!-- <i class="material-icons">cloud_download</i> --}}
-                        {{this.downloads}}
-                    </p>
-                </div>
+            <div class="stats">
+                <p class="stats-item likes">
+                    <i class="material-icons">thumb_up</i>
+                    {{this.likes}}
+                </p>
+                <p class="stats-item viwes">
+                    <i class="material-icons">visibility</i>
+                    {{this.views}}
+                </p>
+                <p class="stats-item comments">
+                    <i class="material-icons">comment</i>
+                    {{this.comments}}
+                </p>
+                <p class="stats-item downloads">
+                    <i class="material-icons">cloud_download</i>
+                    {{this.downloads}}
+                </p>
             </div>
-        </a>
-    </li>
-    {{/each}}
-</ul>
+        </div>
+    </a>
+</li>
+{{/each}}
