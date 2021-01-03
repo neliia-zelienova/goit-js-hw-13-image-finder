@@ -69,7 +69,9 @@ html {
   margin-left: 0;
   margin-right: 0;
   display: block;
-}
+  height: 160px;
+  object-fit: fill;
+  }
 
 .gallery-img {
   width: 260px;
