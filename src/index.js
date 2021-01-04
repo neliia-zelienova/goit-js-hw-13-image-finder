@@ -23,7 +23,7 @@ formRef.addEventListener('submit', (event) => {
 });
 
 
-
+// LoadMore Button
 const loadMoreBtnRef = document.querySelector('.button');
 
 loadMoreBtnRef.addEventListener('click', () => {
@@ -36,26 +36,22 @@ loadMoreBtnRef.addEventListener('click', () => {
     });
 });
 
-
+// Overlay
 const aRef = document.querySelector('ul');
-aRef.addEventListener('click', (event) => {
 
+aRef.addEventListener('click', (event) => {
     if (event.target.alt) {
         const content = document.createElement('div');
-
-    const img = document.createElement('img');
-
-    img.src = event.target.alt;
-
+        const img = document.createElement('img');
+        img.src = event.target.alt;
         content.appendChild(img);
-        
-        console.log('content: ', content);
-
-
-
-    const instance = basicLightbox.create(content);
-
+        const instance = basicLightbox.create(content, {
+            onShow: (instance) => {
+                document.addEventListener('keydown', (event) => {
+                    if (event.code === 'Escape') instance.close()
+                });
+            }
+        });
     document.querySelector('ul').onclick = instance.show(() => console.log('showed'));
     }
-    
 });
