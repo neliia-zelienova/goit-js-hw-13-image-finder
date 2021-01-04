@@ -137,7 +137,7 @@ import rendrGallery from "../templates/gallery.hbs"
 //ForRender.renderArray = images;
 export const render = (data) => {
     const containerRef = document.querySelector('.gallery-list');
-    containerRef.insertAdjacentHTML('beforeend', rendrGallery({data}));
+    containerRef.insertAdjacentHTML('beforeend', rendrGallery({ data }));
 };
 
 

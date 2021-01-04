@@ -1,5 +1,10 @@
 import './styles.css';
-import * as debounce from 'lodash.debounce';
+
+import '../src/normalize.css';
+
+import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
+
+import * as basicLightbox from 'basiclightbox'
 
 import { render, clearImageList } from './js/render';
 
@@ -12,18 +17,10 @@ let currImgsPage = 0;
 
 formRef.addEventListener('submit', (event) => {
     event.preventDefault();
-    currImgsPage += 1;
+    currImgsPage = 1;
     clearImageList();
-    getImages(inputRef.value, 1).then(data => render(data.hits));
+    getImages(inputRef.value, currImgsPage).then(data => render(data.hits));
 });
-
-
-// inputRef.addEventListener('input', debounce(() => {
-//     console.log(inputRef.value);
-    
-//     //render();
-//     }, 500)
-// );
 
 
 
@@ -37,4 +34,28 @@ loadMoreBtnRef.addEventListener('click', () => {
             behavior: 'smooth'
         });
     });
+});
+
+
+const aRef = document.querySelector('ul');
+aRef.addEventListener('click', (event) => {
+
+    if (event.target.alt) {
+        const content = document.createElement('div');
+
+    const img = document.createElement('img');
+
+    img.src = event.target.alt;
+
+        content.appendChild(img);
+        
+        console.log('content: ', content);
+
+
+
+    const instance = basicLightbox.create(content);
+
+    document.querySelector('ul').onclick = instance.show(() => console.log('showed'));
+    }
+    
 });
