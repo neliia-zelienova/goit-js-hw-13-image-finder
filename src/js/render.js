@@ -1,7 +1,5 @@
 import rendrGallery from "../templates/gallery.hbs"
 
-
-
 // const ForRender = {
 //     renderArray: [
 //     {"comments": 78,
@@ -144,4 +142,9 @@ export const render = (data) => {
 export const clearImageList = () => {
     const containerRef = document.querySelector('.gallery-list');
     if (containerRef) containerRef.innerHTML = "";
+}
+
+export const showLoadMoreButton = () => {
+    const LoadModeButtonRef = document.querySelector('.load-more');
+    LoadModeButtonRef.style.opacity = '1';
 }
