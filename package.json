@@ -54,6 +54,7 @@
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
     "lodash.debounce": "^4.0.8",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "toastr": "^2.1.4"
   }
 }
